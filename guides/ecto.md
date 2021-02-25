@@ -372,8 +372,12 @@ iex> Repo.insert(%User{email: "user1@example.com"})
 INSERT INTO "users" ("email","inserted_at","updated_at") VALUES ($1,$2,$3) RETURNING "id" ["user1@example.com", {{2017, 5, 23}, {19, 6, 4, 822044}}, {{2017, 5, 23}, {19, 6, 4, 822055}}]
 {:ok,
  %Hello.User{__meta__: #Ecto.Schema.Metadata<:loaded, "users">,
-  bio: nil, email: "user1@example.com", id: 3,
-  inserted_at: ~N[2017-05-23 19:06:04.822044], name: nil, number_of_pets: nil,
+  bio: nil, 
+  email: "user1@example.com", 
+  id: 1,
+  inserted_at: ~N[2017-05-23 19:06:04.822044], 
+  name: nil, 
+  number_of_pets: nil,
   updated_at: ~N[2017-05-23 19:06:04.822055]}}
 
 iex> Repo.insert(%User{email: "user2@example.com"})
@@ -381,8 +385,12 @@ iex> Repo.insert(%User{email: "user2@example.com"})
 INSERT INTO "users" ("email","inserted_at","updated_at") VALUES ($1,$2,$3) RETURNING "id" ["user2@example.com", {{2017, 5, 23}, {19, 6, 8, 452545}}, {{2017, 5, 23}, {19, 6, 8, 452556}}]
 {:ok,
  %Hello.User{__meta__: #Ecto.Schema.Metadata<:loaded, "users">,
-  bio: nil, email: "user2@example.com", id: 4,
-  inserted_at: ~N[2017-05-23 19:06:08.452545], name: nil, number_of_pets: nil,
+  bio: nil, 
+  email: "user2@example.com", 
+  id: 2,
+  inserted_at: ~N[2017-05-23 19:06:08.452545], 
+  name: nil, 
+  number_of_pets: nil,
   updated_at: ~N[2017-05-23 19:06:08.452556]}}
 ```
 
@@ -393,12 +401,20 @@ iex> Repo.all(User)
 [debug] QUERY OK source="users" db=2.7ms
 SELECT u0."id", u0."bio", u0."email", u0."name", u0."number_of_pets", u0."inserted_at", u0."updated_at" FROM "users" AS u0 []
 [%Hello.User{__meta__: #Ecto.Schema.Metadata<:loaded, "users">,
-  bio: nil, email: "user1@example.com", id: 3,
-  inserted_at: ~N[2017-05-23 19:06:04.822044], name: nil, number_of_pets: nil,
+  bio: nil, 
+  email: "user1@example.com", 
+  id: 3,
+  inserted_at: ~N[2017-05-23 19:06:04.822044], 
+  name: nil, 
+  number_of_pets: nil,
   updated_at: ~N[2017-05-23 19:06:04.822055]},
  %Hello.User{__meta__: #Ecto.Schema.Metadata<:loaded, "users">,
-  bio: nil, email: "user2@example.com", id: 4,
-  inserted_at: ~N[2017-05-23 19:06:08.452545], name: nil, number_of_pets: nil,
+  bio: nil, 
+  email: "user2@example.com", 
+  id: 4,
+  inserted_at: ~N[2017-05-23 19:06:08.452545], 
+  name: nil, 
+  number_of_pets: nil,
   updated_at: ~N[2017-05-23 19:06:08.452556]}]
 ```
 
